@@ -1,3 +1,4 @@
+import com.franco.screenmatch.calculos.CalculadoraDeTiempo;
 import com.franco.screenmatch.modelos.Pelicula;
 import com.franco.screenmatch.modelos.Serie;
 
@@ -34,5 +35,21 @@ public class Principal {
         System.out.println("*****Serie****");
         casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionEnMinutos());
+
+
+        CalculadoraDeTiempo calculador = new CalculadoraDeTiempo();
+        calculador.incluye(miPelicula);
+        calculador.incluye(casaDragon);
+        System.out.println(calculador.getTiempoTotal());
+
+        Pelicula otraPelicula3 = new Pelicula();
+        otraPelicula3.setNombre("Dead pool 3");
+        otraPelicula3.setAnioDeLanzamiento(2024);
+        otraPelicula3.setDuracionEnMinutos(180);
+
+        calculador.incluye(otraPelicula3);
+        System.out.println("Tiempo necesario para ver los titulos favoritos estas vacaciones: " + calculador.getTiempoTotal() + " Min.");
+
+
     }
 }
