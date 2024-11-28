@@ -1,4 +1,6 @@
 import com.franco.screenmatch.calculos.CalculadoraDeTiempo;
+import com.franco.screenmatch.calculos.FiltroRecomendacion;
+import com.franco.screenmatch.modelos.Episodio;
 import com.franco.screenmatch.modelos.Pelicula;
 import com.franco.screenmatch.modelos.Serie;
 
@@ -50,6 +52,17 @@ public class Principal {
         calculador.incluye(otraPelicula3);
         System.out.println("Tiempo necesario para ver los titulos favoritos estas vacaciones: " + calculador.getTiempoTotal() + " Min.");
 
+        FiltroRecomendacion filtroDeRecomendacion = new FiltroRecomendacion();
+        System.out.println("**filtro pelicula**");
+        filtroDeRecomendacion.filtra(miPelicula);
 
+        Episodio episodio1 = new Episodio();
+        episodio1.setNumero(1);
+        episodio1.setNombre("La casa Targaryen");
+        episodio1.setSerie(casaDragon);
+        episodio1.setTotalVisualizaciones(300);
+        System.out.println("***filtro recomendacion****");
+        filtroDeRecomendacion.filtra(episodio1);
+        
     }
 }
